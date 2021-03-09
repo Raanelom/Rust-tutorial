@@ -39,3 +39,11 @@ https://doc.rust-lang.org/stable/book/ch02-00-guessing-game-tutorial.html
     ```rust
     println("x = {}, y = {}", x, y);
     ```
+- Library-Crates can be declared in `Cargo.toml` in the `[dependencies]`-section (+ semantic version number)
+- Rust's Crate-registry is located at crate.io
+- `Cargo.lock` pins Crate version-numbers, unless the newest patches are explicitly fetched using `cargo update`. In other words, updating from 3.5.5 to 3.5.7 requires `cargo update`. Otherwise, `cargo.lock` will preserve the installed package with version `3.5.5`.
+- Rust uses `match` expressions to express conditions simlar to Python's lambda-expressions. It consists of "arms", and each arm consists of a "pattern". If the arm's pattern is matched, the corresponding command is executed. A match-expression is finished if one of the arm patterns evaluated to "true".
+- Rust allows "shadowing" existing variables, e.g. overriding an existing variable "var_a" of type string with a new variable "var_a" with type int.
+- Rust knows multiple signed and unsigned integer types, such as i32, u32, i64 and u64. By default, an integer is 32-bit and signed (`i32`).
+- Types can be expressed using `:`, e.g. `let x: i32 = 42`
+- `loop { }` is an endless condition-less loop, which can be exited using `break`
