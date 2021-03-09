@@ -8,6 +8,9 @@ fn main() {
     println!("The value of x is: {}", x);
 
     perform_math_operations();
+
+    let a = [3; 5];
+    println!("{}", a[1])
 }
 
 
