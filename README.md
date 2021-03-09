@@ -47,3 +47,12 @@ https://doc.rust-lang.org/stable/book/ch02-00-guessing-game-tutorial.html
 - Rust knows multiple signed and unsigned integer types, such as i32, u32, i64 and u64. By default, an integer is 32-bit and signed (`i32`).
 - Types can be expressed using `:`, e.g. `let x: i32 = 42`
 - `loop { }` is an endless condition-less loop, which can be exited using `break`
+- Match can also be used as inline expression, for example: 
+    ```rust
+    let x = match guess.trim().parse() {
+        Ok(num) => num,
+        Err(_) => {
+            // handle error here
+        }
+    };
+    ```
