@@ -56,3 +56,29 @@ https://doc.rust-lang.org/stable/book/ch02-00-guessing-game-tutorial.html
         }
     };
     ```
+
+
+## Chapter 3: Common Programming Concepts
+https://doc.rust-lang.org/stable/book/ch03-00-common-programming-concepts.html
+
+Reseved keywords: https://doc.rust-lang.org/stable/book/appendix-01-keywords.html
+
+
+### Today I Learned:
+- Besides (mutable) variables, there's also the concept of "constants" (`const`). These require type-annotation.
+- Variables can't be declared in global scope. Constants can.
+- Integers range from 8-bit (`[u/i]8`) to 128-bit (`[u/i]128`)
+- `isize` and `usize` adapt to the restrictions of the OS (in most cases 32-bit vs 64-bit)
+- Possible notations:
+    | Type | Value |
+    | ---- | ----- |
+    | Decimal | `98_222` |
+    | Hex | `0xff` |
+    | Octal | `0o77` |
+    | Binary | `0b1111_0000` |
+    | Byte (u8 only) | `b'A'` |
+- Rust panics in debug mode if an overflow occurs. In Release-mode, the value wraps around (thus for 8-bit integers, 256 => 0, 257 => 1, etc.)
+- There are two type of reserved keywords for floating-points: `f32` and `f64` (default)
+- Boolean type can be used with keyword `bool`
+- Rust's `char` type is a four-byte Unicode Scalar Value
+- A "Scalar type" represents a single value (such as int, string, bool and char), whereas "Compound types" groups multilpe values into one type.
