@@ -117,5 +117,19 @@ Reseved keywords: https://doc.rust-lang.org/stable/book/appendix-01-keywords.htm
     }
     ```
 - Comments: `//`. There are no block comments in Rust.
-
+- `if` and `else`-expressions have the following shape:
+    ```rust
+    if some_condition {
+        // handle some_condition
+    } else if some_other_condition {
+        // handle some_other_condition
+    } else {
+        // handle other cases
+    }
+- Inline `if`/`else` expressions are also possible:
+    ```rust
+    // Note: arms should return the same data-type
+    let some_str = if some_no > 5 { "high" } else { "low" };
+    ```
+- Besides `loop`, Rust has `while` and `for` keywords to create repeating code blocks
 TODO: continue @ https://doc.rust-lang.org/stable/book/ch03-05-control-flow.html
