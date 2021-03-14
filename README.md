@@ -132,4 +132,18 @@ Reseved keywords: https://doc.rust-lang.org/stable/book/appendix-01-keywords.htm
     let some_str = if some_no > 5 { "high" } else { "low" };
     ```
 - Besides `loop`, Rust has `while` and `for` keywords to create repeating code blocks
+- `loop`-statements are able to return a value using the `break`-keyword + return-value.
+- `for`-loops can be compared with C#'s foreach:
+    ```rust
+    let a = [10, 20, 30, 40, 50];
+    for element in a.iter() {
+        println!("the value is: {}", element);
+    }
+    ```
+- A `Range` can be used in combination with a `for`-loop:
+    ```rust
+    for number in (1..4) { } // Looping over numbers 1, 2, 3
+    ```
+
+
 TODO: continue @ https://doc.rust-lang.org/stable/book/ch03-05-control-flow.html
