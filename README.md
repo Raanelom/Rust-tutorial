@@ -82,3 +82,28 @@ Reseved keywords: https://doc.rust-lang.org/stable/book/appendix-01-keywords.htm
 - Boolean type can be used with keyword `bool`
 - Rust's `char` type is a four-byte Unicode Scalar Value
 - A "Scalar type" represents a single value (such as int, string, bool and char), whereas "Compound types" groups multilpe values into one type.
+- Rust has two Compound types: "array" `[]` and "tuple" (`tup`). Example:
+    ```rust
+    let x: (i32, f64, u8) = (500, 6.4, 1);
+    let five_hundred = x.0;
+    let six_point_four = x.1;
+    let one = x.2;
+    let test_array = [1, 2, 3];
+    let two = test_array[1];
+    ```
+- Array-types and length can be declared inline:
+    ```rust
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+    ```
+- Repeating the same number in an array:
+    ```rust
+    let a = [3; 5];
+    // a = [3, 3, 3, 3, 3]
+    ```
+- Using array-indices that are out of bounds will produce an error at compile-time. E.g.:
+    ```rust
+    let a: [i32; 3] = [1, 2, 3];
+    println!("{}", a[9]); // This will not compile
+    ```
+- `snake case` is the conventional style for declaring functions.
+- It doesn't matter in which order functions are declared in a source-file.

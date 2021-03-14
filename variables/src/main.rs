@@ -10,7 +10,11 @@ fn main() {
     perform_math_operations();
 
     let a = [3; 5];
-    println!("{}", a[1])
+    println!("{}", a[1]);
+
+    //let test_array: [i32; 3] = [1, 2, 3];
+
+    //println!("{}", test_array[5]);
 }
 
 
