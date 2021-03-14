@@ -107,3 +107,15 @@ Reseved keywords: https://doc.rust-lang.org/stable/book/appendix-01-keywords.htm
     ```
 - `snake case` is the conventional style for declaring functions.
 - It doesn't matter in which order functions are declared in a source-file.
+- Function-parameters require static typing
+- Rust distinguishes between "Statements" and "Expressions". Statements are instructions that perform some action and do not return a value. Expressions evaluate to a resulting value.
+- Rule of thumb: statements end with a semicolon, whereas expressions do not
+- Use of the `return` keyword is optional. A function with return type works as follows:
+    ```rust
+    fn five() -> i32 {
+        5 // Return value is implicit
+    }
+    ```
+- Comments: `//`. There are no block comments in Rust.
+
+TODO: continue @ https://doc.rust-lang.org/stable/book/ch03-05-control-flow.html
