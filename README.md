@@ -145,5 +145,9 @@ Reseved keywords: https://doc.rust-lang.org/stable/book/appendix-01-keywords.htm
     for number in (1..4) { } // Looping over numbers 1, 2, 3
     ```
 
+## Chapter 4: Understanding Ownership
+https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html
 
-TODO: continue @ https://doc.rust-lang.org/stable/book/ch03-05-control-flow.html
+- Each value in Rust has a variable that's its "owner". The relation between values and owners is strictly 1-to-1. If the owner does out of scope, the value will be dropped.
+
+TODO: continue here https://doc.rust-lang.org/stable/book/ch04-01-what-is-ownership.html#variable-scope
