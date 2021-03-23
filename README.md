@@ -148,6 +148,32 @@ Reseved keywords: https://doc.rust-lang.org/stable/book/appendix-01-keywords.htm
 ## Chapter 4: Understanding Ownership
 https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html
 
-- Each value in Rust has a variable that's its "owner". The relation between values and owners is strictly 1-to-1. If the owner does out of scope, the value will be dropped.
 
-TODO: continue here https://doc.rust-lang.org/stable/book/ch04-01-what-is-ownership.html#variable-scope
+
+### Today I Learned:
+- Each value in Rust has a variable that's its "owner". The relation between values and owners is strictly 1-to-1. If the owner goes out of scope, the value will be dropped.
+- Besides string literals (stored on the Stack) there is the `String`-type, which is stored on the heap.
+- `String`s are mutated via the `push_str`-method:
+    ```rust
+    let mut s = String::from("hello");
+    s.push_str(", world!"); // push_str() appends a literal to a String
+    ```
+- The difference between these two string-types is that string-literals are known at compile-time, whereas `String` is only known at run-time.
+- Copying the contents of one variable into another, will invalidate the initial variable. For example:
+    ```rust
+    let s1 = String::from("some string");
+    let s2 = s1; // Invalidate s1, use s2 from now on
+    // This doesn't hold for integer-variables, for which the size is known at compile-time and are therefore stored on the Stack
+    ```
+- Use `clone()` to explicityly copy heap-data to another variable.
+- Variables that store data on the heap and that are passed into a function are invalid after the function ends (by default) because it is freed at the end of the scope (= end of function). Example:
+    ```rust
+    fn main() {
+        let s = String::from("hello");  // s comes into scope
+
+        some_function(s); // use s in some_function() and hand over the ownership 
+        // s is no longer valid here
+    }
+    ```
+
+TODO: continue @ https://doc.rust-lang.org/stable/book/ch04-02-references-and-borrowing.html
