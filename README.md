@@ -195,6 +195,13 @@ https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html
 
     some_var_ref.push_str("s");
     ```
+- It is possible to pass a part of a string as a reference, also referred to as "string slices":
+    ```rust
+    let s = String::from("some__value");
+    let hello = &s[0..5];
+    let world = &s[6..11];
+    ```
+- String literals are of type `&str` (e.g. `let s = "some value" <- s is of type &str`); `&str` is an immutable reference.
+- Slices also generalise to other types, such as lists.
 
-
-TODO: continue @ https://doc.rust-lang.org/stable/book/ch04-02-references-and-borrowing.html
+TODO: continue @ https://doc.rust-lang.org/stable/book/ch05-00-structs.html
