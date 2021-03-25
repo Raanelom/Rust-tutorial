@@ -9,6 +9,10 @@ fn main() {
 
     string_v2();
     test_string_scope();
+
+    let s = String::from("some word with spaces");
+    let first_space = first_word(&s);
+    println!("first space in {} is at position {}", s, first_space);
 }
 
 fn string_v2() {
@@ -25,6 +29,9 @@ fn test_string_scope() {
     println!("{}, world", s1);
     hand_over_ownership(s1);
     // Can't use s1 here anymore
+    pass_reference(&s2);
+    // Can use s2 here
+    println!("can still use {}", s2)
 }
 
 fn hand_over_ownership(s: String) {
@@ -33,4 +40,22 @@ fn hand_over_ownership(s: String) {
 
 fn keep_ownership(s: String) -> String {
     s
+}
+
+fn pass_reference(s: &String) -> usize {
+    s.len()
+}
+
+/// Return the index of the first space
+/// Return the word-length otherwise
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+
+    s.len()
 }

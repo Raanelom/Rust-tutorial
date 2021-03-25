@@ -175,5 +175,26 @@ https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html
         // s is no longer valid here
     }
     ```
+- Variables can be passed to a function without the function taking ownership of the variable by using a reference-indicator `&`. This is called "borrowing":
+    ```rust
+    fn main() {
+        some_var = String::from("some_value");
+        some_function(&some_var);
+        println!("reuse some_var: {}", some_var);
+    }
+
+    fn some_function(some_var: &String) {
+        // "borrow" value some_var here
+        ...
+    }
+    ```
+- References are immutable by default. They can be made mutable by using the `&mut`-keyword. Only one mutable reference per scope is allowed:
+    ```rust
+    let mut some_var = String::from("some_value");
+    let some_var_ref = &mut some_var;
+
+    some_var_ref.push_str("s");
+    ```
+
 
 TODO: continue @ https://doc.rust-lang.org/stable/book/ch04-02-references-and-borrowing.html
