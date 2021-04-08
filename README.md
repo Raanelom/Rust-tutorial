@@ -148,8 +148,6 @@ Reseved keywords: https://doc.rust-lang.org/stable/book/appendix-01-keywords.htm
 ## Chapter 4: Understanding Ownership
 https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html
 
-
-
 ### Today I Learned:
 - Each value in Rust has a variable that's its "owner". The relation between values and owners is strictly 1-to-1. If the owner goes out of scope, the value will be dropped.
 - Besides string literals (stored on the Stack) there is the `String`-type, which is stored on the heap.
@@ -203,5 +201,12 @@ https://doc.rust-lang.org/stable/book/ch04-00-understanding-ownership.html
     ```
 - String literals are of type `&str` (e.g. `let s = "some value" <- s is of type &str`); `&str` is an immutable reference.
 - Slices also generalise to other types, such as lists.
+
+
+## Chapter 5: Using Structs to Structure Related Data
+https://doc.rust-lang.org/stable/book/ch05-00-structs.html
+
+### Today I Learned:
+- A `struct` defines the structure of an object. It can hold together multiple related values.
 
 TODO: continue @ https://doc.rust-lang.org/stable/book/ch05-00-structs.html
