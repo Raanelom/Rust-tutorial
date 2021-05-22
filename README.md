@@ -242,6 +242,9 @@ https://doc.rust-lang.org/stable/book/ch05-00-structs.html
     struct Color(i32, i32, i32);
     ```
 - To print entire structs, one could use pretty-print-options using `{:?}` or `{:#?} instead of `{}` and by annotating structs with `#[derive(Debug)]`.
-- There's a difference between methods and functions; methods are defined within the context of a struct, whereas functions are not. The first parameter of a method is always `self`.
+- There's a difference between methods and functions; methods are defined within the context of a struct, whereas functions are not. The first parameter of a method is always `self`. Methods are defined within an `impl`-block
+- `self` can also be borrowed or referenced, just like any other parameter
+- `impl`-blocks can also hold "associated functions", i.e. a function without the "self"-parameter. Calling associated functions can be done using the `::`-syntax.
+- It's possible to have multiple `impl`-blocks
 
 TODO: continue @ https://doc.rust-lang.org/stable/book/ch05-00-structs.html
