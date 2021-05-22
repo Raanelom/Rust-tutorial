@@ -241,5 +241,7 @@ https://doc.rust-lang.org/stable/book/ch05-00-structs.html
     ```rust
     struct Color(i32, i32, i32);
     ```
+- To print entire structs, one could use pretty-print-options using `{:?}` or `{:#?} instead of `{}` and by annotating structs with `#[derive(Debug)]`.
+- There's a difference between methods and functions; methods are defined within the context of a struct, whereas functions are not. The first parameter of a method is always `self`.
 
 TODO: continue @ https://doc.rust-lang.org/stable/book/ch05-00-structs.html
