@@ -208,5 +208,38 @@ https://doc.rust-lang.org/stable/book/ch05-00-structs.html
 
 ### Today I Learned:
 - A `struct` defines the structure of an object. It can hold together multiple related values.
+- It's possible to access fields using the dot notation (e.g. user.email)
+- Fields can only be updated if the entire struct is marked mutable
+- We can use "field init shorthand" to provide values to fields, e.g.:
+    ```rust
+    // Default assignment notation
+    fn build_user(email: String, username: String) -> User {
+        User {
+            email: email,
+            username: username,
+            active: true,
+            sign_in_count: 1,
+        }
+    }
+    // Field init shorthand notation
+    fn build_user(email: String, username: String) -> User {
+        User {
+            email, // Note that we don't explicitly link the value here
+            username, // Here neither
+            active: true,
+            sign_in_count: 1,
+        }
+    }
+- This only works if the parameter-name matches the field name
+- To copy over some fields from one object to another, use the `..` notation:
+    ```rust
+    let user2 = User {
+        email: String::from("some@email.com"), // Set a unique e-mailadress
+        ..user1 // Copy the remaining fields from user 1
+    }
+- If you're in doubt whether to pick a Tuple or Struct, choose the Tuple Struct: a named Tuple: 
+    ```rust
+    struct Color(i32, i32, i32);
+    ```
 
 TODO: continue @ https://doc.rust-lang.org/stable/book/ch05-00-structs.html
