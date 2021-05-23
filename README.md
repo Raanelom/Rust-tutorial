@@ -247,4 +247,25 @@ https://doc.rust-lang.org/stable/book/ch05-00-structs.html
 - `impl`-blocks can also hold "associated functions", i.e. a function without the "self"-parameter. Calling associated functions can be done using the `::`-syntax.
 - It's possible to have multiple `impl`-blocks
 
-TODO: continue @ https://doc.rust-lang.org/stable/book/ch05-00-structs.html
+
+## Chapter 6: Enums and Pattern Matching
+https://doc.rust-lang.org/stable/book/ch06-00-enums.html
+
+- Enums can be used for enumerating several options, e.g.:
+    ```rust
+    enum IpAddrKind {
+        V4,
+        V6
+    }
+    ```
+- It's also possible to pass parameters (any amount/kind) to enums:
+    ```rust
+    enum IpAddr {
+        V4(String),
+        V6(String)
+    }
+    ```
+- Just like structs, use `impl` to add methods to an enum
+- Rust doesn't have null values! :party:
+- 
+TODO: continue @ https://doc.rust-lang.org/stable/book/ch06-01-defining-an-enum.html (at the end of the section)
