@@ -267,5 +267,16 @@ https://doc.rust-lang.org/stable/book/ch06-00-enums.html
     ```
 - Just like structs, use `impl` to add methods to an enum
 - Rust doesn't have null values! :party:
+- Matching enums and Options is also supported by Rust:
+    ```rust
+    fn plus_one(x: Option<i32>) -> Option<i32> {
+        match x {
+            None => None, // Do nothing if value is None
+            Some(i) => Some(i + 1), // Increment by 1 if value is Some
+        }
+    }
+    ```
+- Matches are exhaustive, thus if you miss one, Rust won't compile
+- The "default" match is handled by `_`
 - 
-TODO: continue @ https://doc.rust-lang.org/stable/book/ch06-01-defining-an-enum.html (at the end of the section)
+TODO: continue @ https://doc.rust-lang.org/stable/book/ch06-03-if-let.html
