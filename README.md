@@ -278,5 +278,25 @@ https://doc.rust-lang.org/stable/book/ch06-00-enums.html
     ```
 - Matches are exhaustive, thus if you miss one, Rust won't compile
 - The "default" match is handled by `_`
-- 
-TODO: continue @ https://doc.rust-lang.org/stable/book/ch06-03-if-let.html
+- `if let` is another way of expressing a `match`
+
+## Chapter 7: Managing Growing Projects with Packages, Crates, and Modules
+https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html
+
+- Larger projects can be structured using Rust's building blocks:
+    - Packages: A Cargo feature that lets you build, test, and share crates
+    - Crates: A tree of modules that produces a library or executable
+    - Modules and use: Let you control the organization, scope, and privacy of paths
+    - Paths: A way of naming an item, such as a struct, function, or module
+- A package consists of at least one crate, which could either be a library or a binary crate. A package can only have zero or one library crates, and any number of binary crates.
+- The purpose of a module is mainly to describe the structure of the code and organise it. It also determines the accessability of modules and its content (e.g. a function) by using the keywords `pub` and `priv`.
+- Paths can be used to describe the location of items in the module tree. It can either be absolute or relative:
+    ```Rust
+    // Absolute path
+    crate::front_of_house::hosting::add_to_waitlist();
+
+    // Relative path
+    front_of_house::hosting::add_to_waitlist();
+    ```
+
+TODO: continue @ https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html

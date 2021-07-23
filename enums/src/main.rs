@@ -53,6 +53,8 @@ fn main() {
     let five = Some(5);
     let six = plus_one(five);
     let none = plus_one(None);
+
+    test_if_let();
 }
 
 fn plus_one(x: Option<i32>) -> Option<i32> {
@@ -62,3 +64,9 @@ fn plus_one(x: Option<i32>) -> Option<i32> {
     }
 }
 
+fn test_if_let() {
+    let some_val = Some(0u8);
+    if let Some(3) = some_val {
+        println!("three")
+    }
+}
