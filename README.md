@@ -298,5 +298,10 @@ https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-pac
     // Relative path
     front_of_house::hosting::add_to_waitlist();
     ```
+- We can use the `as` keyword to name module imports: `use std::io::Result as IoResult;`
+- Imports from the same package can be nested (no `*`, but `use std::{cmp::Ordering, io};`). A wildcard `*` brings *all* items into scope.
+- The module hierarchy can be separated into files and folders. A nested module is then saved in a separate, similarly named file in a folder with the name of the parent module.
 
-TODO: continue @ https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html
+
+
+TODO: continue @ https://doc.rust-lang.org/stable/book/ch08-00-common-collections.html
