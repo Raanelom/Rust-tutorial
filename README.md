@@ -302,6 +302,11 @@ https://doc.rust-lang.org/stable/book/ch07-00-managing-growing-projects-with-pac
 - Imports from the same package can be nested (no `*`, but `use std::{cmp::Ordering, io};`). A wildcard `*` brings *all* items into scope.
 - The module hierarchy can be separated into files and folders. A nested module is then saved in a separate, similarly named file in a folder with the name of the parent module.
 
+## Chapter 8: Common Collections
+https://doc.rust-lang.org/stable/book/ch08-00-common-collections.html
 
+- Besides the built-in data structures such as list and array, Rust also contains the structures `vector`, `string` and `hash map`.
+- A Vector can hold any type of data. 
+- It can either hold data of a single type (default), or use enums to store different types.
 
-TODO: continue @ https://doc.rust-lang.org/stable/book/ch08-00-common-collections.html
+TODO: continue @ https://doc.rust-lang.org/stable/book/ch08-02-strings.html
