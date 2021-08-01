@@ -308,5 +308,10 @@ https://doc.rust-lang.org/stable/book/ch08-00-common-collections.html
 - Besides the built-in data structures such as list and array, Rust also contains the structures `vector`, `string` and `hash map`.
 - A Vector can hold any type of data. 
 - It can either hold data of a single type (default), or use enums to store different types.
+- Strings can be concatenated using the `+` operator. However, this requires borrowing the second argument.
+- Another way to concat two or more strings is by using the `format!`-macro. It doesn't take ownership of any of its parameters.
+- Slicing a string in Rust requires a range of indices, not a single index as in other languages. This is because some characters take up more than a single byte, such as characters in the string `some_str="Здравствуйте"`. Slicing this string like `some_str[0..4]` returns the first two characters (because they both take up 2 bytes of space).
+- It's possible to use the string-operations `chars()` and `bytes()` to iterate over a string.
+- Conclusion: Strings are complicated
 
 TODO: continue @ https://doc.rust-lang.org/stable/book/ch08-02-strings.html
